@@ -18,12 +18,9 @@ public class DoadorDTO {
 
     public DoadorDTO(String message) {
         String[] fields = message.split(";");
-        this.id = Long.parseLong(fields[0]);
-        this.nome = fields[1];
-        this.idade = Integer.parseInt(fields[2]);
-        this.tiposanguineo = fields[3];
-        this.Rg = fields[4];
-        this.ativo = Boolean.parseBoolean(fields[5]);
+
+        this.nome = fields[0];
+
     }
 
 
