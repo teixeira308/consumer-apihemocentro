@@ -16,10 +16,13 @@ public class DoadorDTO {
 
     private Boolean ativo;
 
+    private String email;
+
     public DoadorDTO(String message) {
         String[] fields = message.split(";");
 
         this.nome = fields[0];
+        this.email = fields[2];
 
     }
 
@@ -73,4 +76,8 @@ public class DoadorDTO {
     public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
     }
+
+    public String getEmail() {   return email;   }
+
+    public void setEmail(String email) {  this.email = email;  }
 }

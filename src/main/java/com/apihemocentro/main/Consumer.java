@@ -5,6 +5,7 @@ import java.util.List;
 import com.apihemocentro.bo.ConsumerBO;
 import com.apihemocentro.bo.MailBO;
 import com.apihemocentro.dto.DoadorDTO;
+import com.apihemocentro.dto.BancoDeSangueDTO;
 
 public class Consumer {
 
@@ -17,11 +18,19 @@ public class Consumer {
             if (messages.size() > 0) {
 
                 for (String message : messages) {
-                    if (message.contains(";")) {
+                    if (message.contains(";hemocentro")) {
+
                         DoadorDTO doador = new DoadorDTO(message);
-                        new MailBO().SendEmailTLS(doador);
+                        new MailBO().SendEmailTLSDoador(doador);
+                        continue;
                     }
-                    continue;
+                    if (message.contains(";doador"))
+                    {
+                        BancoDeSangueDTO banco = new BancoDeSangueDTO(message);
+                        new MailBO().SendEmailTLSBancoDeSangue(banco);
+                        continue;
+                    }
+
                 }
             }
 
