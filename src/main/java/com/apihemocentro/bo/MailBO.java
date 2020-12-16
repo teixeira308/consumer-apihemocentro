@@ -13,6 +13,10 @@ import javax.mail.internet.MimeMessage;
 
 import com.apihemocentro.dto.BancoDeSangueDTO;
 import com.apihemocentro.dto.DoadorDTO;
+import com.slack.api.methods.MethodsClient;
+import com.slack.api.methods.request.chat.ChatPostMessageRequest;
+import com.slack.api.methods.response.chat.ChatPostMessageResponse;
+import com.slack.api.Slack;
 
 public class MailBO {
 
@@ -36,19 +40,32 @@ public class MailBO {
         });
 
         try {
-
+            //email
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("sanguebom@gmail.com"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(banco.getEmail()));
             message.setSubject("Confirmação de cadastro");
             message.setText("Ola " + banco.getNome() +"!\n\n Seu cadastro na plataforma Sangue Bom foi realizado com sucesso.");
             Transport.send(message);
-
             System.out.println("E-mail send!");
 
         } catch (MessagingException e) {
             e.printStackTrace();
         }
+        try{
+            //slack
+            Slack slack = Slack.getInstance();
+            String token = System.getenv("xoxb-1304946036421-1584235344804-mcAO8sSJdbmPKhhAKpvvzvfH");
+            MethodsClient methods = slack.methods(token);
+            ChatPostMessageRequest request = ChatPostMessageRequest.builder()
+                    .channel("#sanguebomlog") // Use a channel ID `C1234567` is preferrable
+                    .text(":wave: Ola  " + banco.getNome() + "! \n\n Seu cadastro na plataforma Sangue Bom foi realizado com sucesso.")
+                    .build();
+            ChatPostMessageResponse response = methods.chatPostMessage(request);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
     public void SendEmailTLSDoador(DoadorDTO doador) {
         prop = new Properties();
@@ -75,6 +92,20 @@ public class MailBO {
             System.out.println("E-mail send!");
 
         } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+
+        try{
+            //slack
+            Slack slack = Slack.getInstance();
+            String token = System.getenv("NAO TEM TOKEN AQUI HAHA");
+            MethodsClient methods = slack.methods(token);
+            ChatPostMessageRequest request = ChatPostMessageRequest.builder()
+                    .channel("#sanguebomlog") // Use a channel ID `C1234567` is preferrable
+                    .text(":wave: Ola " + doador.getNome() +"!\n\n Seu cadastro na plataforma Sangue Bom foi realizado com sucesso.")
+                    .build();
+            ChatPostMessageResponse response = methods.chatPostMessage(request);
+        }catch (Exception e) {
             e.printStackTrace();
         }
     }
