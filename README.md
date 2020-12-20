@@ -2,6 +2,8 @@
 
 Projeto criado com objetivo de consumir mensagens na fila do RabbitMQ.
 
+![Imagem Slack - RabbitMQ](image/slack-rabbit.png)
+
 
 ##  Pré-requisitos para execução do projeto
 - Tecnologias necessárias.
