@@ -13,11 +13,7 @@ import javax.mail.internet.MimeMessage;
 import com.apihemocentro.dto.BancoDeSangueDTO;
 import com.apihemocentro.dto.DoadorDTO;
 import com.slack.api.Slack;
-import com.slack.api.methods.MethodsClient;
-import com.slack.api.methods.request.chat.ChatPostMessageRequest;
-import com.slack.api.methods.response.chat.ChatPostMessageResponse;
 import com.slack.api.webhook.Payload;
-import com.slack.api.webhook.WebhookResponse;
 
 public class MailBO {
 
