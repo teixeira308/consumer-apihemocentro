@@ -1,8 +1,8 @@
-com\apihemocentro\bo\ConsumerBO.class
-com\apihemocentro\dto\BancoDeSangueDTO.class
-com\apihemocentro\main\Consumer.class
-com\apihemocentro\bo\MailBO$2.class
-com\apihemocentro\config\Configuracao.class
-com\apihemocentro\dto\DoadorDTO.class
-com\apihemocentro\bo\MailBO$1.class
-com\apihemocentro\bo\MailBO.class
+com/apihemocentro/bo/MailBO$1.class
+com/apihemocentro/config/Configuracao.class
+com/apihemocentro/dto/BancoDeSangueDTO.class
+com/apihemocentro/dto/DoadorDTO.class
+com/apihemocentro/bo/MailBO.class
+com/apihemocentro/main/Consumer.class
+com/apihemocentro/bo/MailBO$2.class
+com/apihemocentro/bo/ConsumerBO.class

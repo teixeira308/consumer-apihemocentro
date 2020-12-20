@@ -18,13 +18,13 @@ public class Consumer {
             if (messages.size() > 0) {
 
                 for (String message : messages) {
-                    if (message.contains(";hemocentro")) {
+                    if (message.contains(";doador")) {
 
                         DoadorDTO doador = new DoadorDTO(message);
                         new MailBO().SendEmailTLSDoador(doador);
                         continue;
                     }
-                    if (message.contains(";doador"))
+                    if (message.contains(";hemocentro"))
                     {
                         BancoDeSangueDTO banco = new BancoDeSangueDTO(message);
                         new MailBO().SendEmailTLSBancoDeSangue(banco);
