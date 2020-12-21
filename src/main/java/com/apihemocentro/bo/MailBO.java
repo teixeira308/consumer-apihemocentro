@@ -52,7 +52,7 @@ public class MailBO {
 		try {
 			Slack slack = Slack.getInstance();
 
-			String webhookUrl = "https://hooks.slack.com/services/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";
+			String webhookUrl = "https://hooks.slack.com/services/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";
 			Payload payload = Payload.builder().text(":wave: Ola hemocentro " + banco.getNome()
 					+ "!\n\n Seu cadastro na plataforma Sangue Bom foi realizado com sucesso.").build();
 
@@ -96,7 +96,7 @@ public class MailBO {
 		try {
 			Slack slack = Slack.getInstance();
 
-			String webhookUrl = "https://hooks.slack.com/services/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";
+			String webhookUrl = "https://hooks.slack.com/services/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";
 
 			Payload payload = Payload.builder().text(":wave: Ola doador " + doador.getNome()
 					+ "!\n\n Seu cadastro na plataforma Sangue Bom foi realizado com sucesso.").build();
