@@ -35,3 +35,8 @@ Esse projeto tem como objetivo de consumir a fila do RabbitMQ e enviar e-mail e 
   
   5- Entre no Package **com.apihemocentro.main** e clique na classe Java **Consumer.java** e clique em **Run**.
   
+  
+### 2) Video do funcionamento (Loom)
+
+  https://www.loom.com/share/21cab273edf34aca9df3b7cf677e4538
+  
